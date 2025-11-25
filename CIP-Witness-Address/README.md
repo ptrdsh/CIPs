@@ -15,9 +15,12 @@ License: CC-BY-4.0
 
 ## Abstract
 
-This CIP extends [CIP-100 | Governance Metadata][CIP-100] to introduce a standardized `AddressOfWitnessPublicKey` property within the `authors` object of the metadata witness section. 
-The `AddressOfWitnessPublicKey` property expresses which onchain identity the public key, stated with every witness, corresponds to. This enables verification of an author's identity using explorers, via identity NFTs, et al, and overall provides more useful context to the witness signature than without. 
-A witness public key should be able to correspond to any "address". To enable cross-chain, or Cardano-independent identity bindings of public keys to addresses, an `AddressType` property is added, to specify which type of address this is. Valid example types may be: `Cardano`, `CardanoTest`, `Midnight`, `Bitcoin`, `KERI`, `VLEI`, `Atala`, etc. whereby some of them would require additional `witnessAlgorithm`'s to be allowed. 
+This CIP extends [CIP-100 | Governance Metadata][CIP-100] to introduce a standardized `AddressOfWitnessPublicKey` property within the `authors` object. 
+
+The `AddressOfWitnessPublicKey` property expresses which onchain identity the `publicKey` (stated with every witness) corresponds to. This enables verification of an author's identity using explorers, e.g. via identity NFTs, et al, without needing to rely on secondary publications of publicKeys, and overall provides more useful context to given witness information. 
+
+A witness public key should be able to correspond to any "address". To enable cross-chain, or Cardano-independent identity bindings of public keys to addresses, an additional property `AddressType` is added, to specify which type of address `AddressOfWitnessPublicKey` is. Likely useful example types may be: `Cardano`, `CardanoTest`, `Midnight`, `Bitcoin`, `KERI`, `VLEI`, `Atala`, etc.. However, some of those examples would require additional `witnessAlgorithm`'s to be allowed, which is why `AddressType` values remain unspecified within this CIP. 
+
 These two additional properties can be applied to all types of governance metadata, including governance actions, votes, DRep registrations/updates, and Constitutional Committee resignations.
 
 ## Motivation: why is this CIP necessary?
