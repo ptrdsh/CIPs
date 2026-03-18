@@ -25,6 +25,21 @@ This change reduces the CC's operational burden from active interaction with eve
 
 ## Motivation
 
+**A structural observation:**
+
+Across the first ~100 governance actions on mainnet, no proposal was rejected by the CC where DReps would otherwise have approved it. Every proposal the CC found unconstitutional was independently rejected by DRep vote. DReps, acting in rational self-interest to protect their stake and the infrastructure their businesses rely on, have proven effective at identifying bad proposals without CC guidance.
+
+This observation is the empirical foundation for Optimistic Constitutionality: if the CC almost never needs to override DRep consensus, why require the CC to actively approve every action?
+
+### The Current Model's Inefficiencies
+
+Under CIP-1694, the CC must reach its approval threshold for every governance action type that requires CC consent (all types except Info actions and No Confidence motions against themselves). This creates several problems:
+
+1. **Late voting.** CC members empirically vote in the final 20% of a governance action's lifetime, after DReps have already cast votes. This wastes DRep effort on proposals that the CC ultimately rejects.
+2. **DRep discouragement.** When CC rejections arrive late, DReps who already spent time evaluating proposals see their work invalidated. Over time, this suppresses DRep participation.
+3. **False urgency.** The requirement that CC members evaluate every proposal creates a baseline workload that scales linearly with governance activity, regardless of whether the proposals are contentious.
+4. **Compensation pressure.** The active-approval model makes the "CC members must be compensated" argument seem self-evident, because their workload is indeed real and ongoing. Optimistic Constitutionality dissolves this framing by dramatically reducing the expected workload.
+
 ### The CC Compensation Dilemma
 
 Since the activation of Conway-era governance, the community has been unable to reach consensus on whether and how Constitutional Committee members should be compensated. The positions are well-documented and deeply held:
@@ -42,22 +57,6 @@ Since the activation of Conway-era governance, the community has been unable to 
 - Once compensation is introduced, it is nearly impossible to reverse. It creates bureaucratic overhead (performance management, disputes over effort, rate renegotiation) without an executive authority to adjudicate conflicts.
 - Paying per governance action incentivizes participation quantity, not quality — a CC member may simply vote yes/no/abstain "for vibes" to collect payment.
 - No empirical evidence yet exists that CC compensation is necessary; candidates continue to step forward, and no CC member has resigned due to lack of payment.
-
-**A structural observation:**
-
-Across the first ~100 governance actions on mainnet, no proposal was rejected by the CC where DReps would otherwise have approved it. Every proposal the CC found unconstitutional was independently rejected by DRep vote. DReps, acting in rational self-interest to protect their stake and the infrastructure their businesses rely on, have proven effective at identifying bad proposals without CC guidance.
-
-This observation is the empirical foundation for Optimistic Constitutionality: if the CC almost never needs to override DRep consensus, why require the CC to actively approve every action?
-
-### The Current Model's Inefficiencies
-
-Under CIP-1694, the CC must reach its approval threshold for every governance action type that requires CC consent (all types except Info actions and No Confidence motions against themselves). This creates several problems:
-
-1. **Late voting.** CC members empirically vote in the final 20% of a governance action's lifetime, after DReps have already cast votes. This wastes DRep effort on proposals that the CC ultimately rejects.
-2. **DRep discouragement.** When CC rejections arrive late, DReps who already spent time evaluating proposals see their work invalidated. Over time, this suppresses DRep participation.
-3. **False urgency.** The requirement that CC members evaluate every proposal creates a baseline workload that scales linearly with governance activity, regardless of whether the proposals are contentious.
-4. **Compensation pressure.** The active-approval model makes the "CC members must be compensated" argument seem self-evident, because their workload is indeed real and ongoing. Optimistic Constitutionality dissolves this framing by dramatically reducing the expected workload.
-
 ## Specification
 
 ### Overview
