@@ -1,10 +1,10 @@
 ---
-CPS: ??
+CPS: "?"
 Title: Regulated Stablecoins on Cardano
 Category: Tokens
 Status: Open
 Authors:
-    - Alex Moser alexander.moser@cardanofoundation.org
+    - Alex Moser <alexander.moser@cardanofoundation.org>
 Proposed Solutions: []
 Discussions:
     - Original PR: https://github.com/cardano-foundation/CIPs/pull/????
@@ -75,7 +75,7 @@ That third category is why this is a problem statement rather than a nice-to-hav
  
 Two seams are worth flagging to both authors: that draft is written against the stale PR #444 text, which affects its question on adding a `RegistryNode` field (the node has already gained two fields since); and it treats a CIP-0113 version as its bootstrap transaction hash, which no longer pins validation logic now that delegates are mutable — the same dependency raised here as R24 and R25.
  
-## Use cases
+## Use Cases
  
 **An authorised EMI issues a EUR EMT.** It must mint against received funds, cap supply to the reserve, publish the binding between policy ID and white paper, freeze sanctioned holders within hours, and burn on redemption — while never blocking a non-sanctioned holder from redeeming. Today it specifies and audits all of this itself, and no wallet supports it without bespoke work.
  
